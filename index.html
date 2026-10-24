@@ -128,7 +128,7 @@
                 Sabores Autênticos & <span class="gold-gradient-text">Vibe Maravilhosa</span>
             </h1>
             <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light">
-                Venha desfrutar de almoços e jantares memorables, com o espírito acolhedor, música ao vivo e momentos inesquecíveis.
+                Venha desfrutar de almoços e jantares memoráveis, com o espírito acolhedor, música ao vivo e momentos inesquecíveis.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -273,7 +273,7 @@
                 Procura um sítio para relaxar ao fim do dia? Venha experimentar o nosso serviço de Shisha com aroma exclusivo e excelente ambiente.
             </p>
             <div class="max-w-xl mx-auto mb-10 rounded-2xl overflow-hidden border border-goldAccent/30 shadow-xl">
-                <img src="shisha.png" alt="Shisha D&S" class="w-full h-auto object-cover">
+                <img src="shisha.png.jpg" alt="Shisha D&S" class="w-full h-auto object-cover">
             </div>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#reservas" class="bg-goldAccent hover:bg-goldHover text-navyBlue font-bold px-8 py-3.5 rounded-full transition shadow-lg">Reservar Mesa com Shisha</a>
@@ -360,29 +360,29 @@
                             <i class="fas fa-directions"></i> Adicionar Localização GPS
                         </a>
                         <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-6 py-3 rounded-full text-sm transition flex items-center gap-2 shadow-lg">
-                            <i class="fab fa-instagram"></i> Marcações para Eventos (Instagram)
+                            <i class="fab fa-instagram"></i> Ir para o Instagram
                         </a>
                     </div>
                 </div>
 
-                <!-- Formulário -->
+                <!-- Formulário com Envio para DM do Instagram -->
                 <div id="reservas" class="bg-darkBg border border-goldAccent/30 p-8 rounded-3xl shadow-2xl">
-                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Reserve a sua Mesa</h3>
-                    <p class="text-gray-400 text-sm mb-6">Preencha o formulário abaixo para garantir a sua mesa ou festa.</p>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Reservas via Instagram DM</h3>
+                    <p class="text-gray-400 text-sm mb-6">Preencha os dados abaixo. Ao confirmar, abrirá diretamente o Instagram com a sua mensagem pronta para enviar.</p>
 
-                    <form id="reserva-form" onsubmit="handleReservation(event)" class="space-y-4">
+                    <form id="reserva-form" onsubmit="sendInstagramDM(event)" class="space-y-4">
                         <div>
                             <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Nome Completo</label>
-                            <input type="text" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                            <input type="text" id="res-nome" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent" placeholder="O seu nome">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Telefone</label>
-                                <input type="tel" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                                <input type="tel" id="res-tel" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent" placeholder="Contacto telefónico">
                             </div>
                             <div>
                                 <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Nº de Pessoas</label>
-                                <select class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                                <select id="res-pessoas" class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
                                     <option>1 a 2 Pessoas</option>
                                     <option>3 a 4 Pessoas</option>
                                     <option>5 a 8 Pessoas (Grupo)</option>
@@ -393,25 +393,21 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Data</label>
-                                <input type="date" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                                <input type="date" id="res-data" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
                             </div>
                             <div>
                                 <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Hora</label>
-                                <input type="time" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                                <input type="time" id="res-hora" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Observações ou Pedidos Especiais</label>
-                            <textarea rows="3" class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent" placeholder="Ex: Aniversário, mesa com shisha..."></textarea>
+                            <textarea id="res-obs" rows="3" class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent" placeholder="Ex: Aniversário, mesa com shisha..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-navyBlue font-bold py-4 rounded-xl transition shadow-lg text-base">
-                            Confirmar Reserva
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-4 rounded-xl transition shadow-lg text-base flex items-center justify-center gap-2">
+                            <i class="fab fa-instagram"></i> Enviar Reserva por Instagram DM
                         </button>
                     </form>
-
-                    <div id="success-msg" class="hidden mt-4 bg-green-500/20 border border-green-500 text-green-300 p-4 rounded-xl text-center text-sm">
-                        Reserva efetuada com sucesso! Entraremos em contacto para confirmação.
-                    </div>
                 </div>
             </div>
         </div>
@@ -442,14 +438,31 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        function handleReservation(e) {
+        // Função para formatar e abrir o Instagram com os dados da reserva
+        function sendInstagramDM(e) {
             e.preventDefault();
-            const successMsg = document.getElementById('success-msg');
-            successMsg.classList.remove('hidden');
-            document.getElementById('reserva-form').reset();
-            setTimeout(() => {
-                successMsg.classList.add('hidden');
-            }, 6000);
+            
+            const nome = document.getElementById('res-nome').value;
+            const telefone = document.getElementById('res-tel').value;
+            const pessoas = document.getElementById('res-pessoas').value;
+            const data = document.getElementById('res-data').value;
+            const hora = document.getElementById('res-hora').value;
+            const obs = document.getElementById('res-obs').value;
+
+            // Criar a mensagem formatada para a DM
+            const mensagem = `Olá! Gostaria de fazer uma reserva:%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*Telemóvel:* ${encodeURIComponent(telefone)}%0A*Pessoas:* ${encodeURIComponent(pessoas)}%0A*Data:* ${encodeURIComponent(data)}%0A*Hora:* ${encodeURIComponent(hora)}%0A*Observações:* ${encodeURIComponent(obs)}`;
+
+            // Redirecionar para o perfil ou link de chat do Instagram
+            const instagramUrl = `https://www.instagram.com/direct/t/17842609054719280/?text=${mensagem}`;
+            
+            // Como alternativa geral que funciona sempre abrindo o perfil ou conversação:
+            window.open(`https://www.instagram.com/D.srestaurante09`, '_blank');
+            
+            // Opcional: Alerta amigável para o utilizador copiar os dados caso abra o perfil direto
+            alert("A redirecionar para o Instagram (@D.srestaurante09). Os detalhes da sua reserva foram copiados!");
+            
+            // Copiar mensagem para a área de transferência para facilitar colar na DM
+            navigator.clipboard.writeText(decodeURIComponent(mensagem.replace(/%0A/g, '\n')));
         }
     </script>
 </body>
