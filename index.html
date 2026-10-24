@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Restaurante D&S | Cozinha Africana e Portuguesa em Agualva-Cacém</title>
+    <title>Café Restaurante D&S | Cozinha Africana e Portuguesa</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,7 +14,9 @@
                         navyBlue: '#0b162c',
                         goldAccent: '#d4af37',
                         goldHover: '#e5c158',
-                        darkBg: '#070e1a'
+                        darkBg: '#070e1a',
+                        cvRed: '#cc3333',
+                        cvBlue: '#003399'
                     }
                 }
             }
@@ -38,6 +40,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Padrão com inspiração nas cores vibrantes de Cabo Verde (Azul, Vermelho, Amarelo/Dourado) */
+        .cv-cultural-stripe {
+            height: 8px;
+            background: linear-gradient(90deg, #003399 0%, #003399 33.3%, #cc3333 33.3%, #cc3333 66.6%, #d4af37 66.6%, #d4af37 100%);
+        }
     </style>
 </head>
 <body class="bg-darkBg text-gray-100 antialiased selection:bg-goldAccent selection:text-navyBlue">
@@ -52,45 +59,45 @@
                     <span class="text-[7px] text-goldAccent uppercase tracking-tighter">Café</span>
                 </div>
                 <div>
-                    <span class="font-serif font-bold text-lg tracking-wide text-white block">Café Restaurante D&S</span>
-                    <span class="text-xs text-goldAccent tracking-widest uppercase">Agualva-Cacém</span>
+                    <span class="font-serif font-bold text-base sm:text-lg tracking-wide text-white block leading-tight">Café Restaurante D&S</span>
+                    <span class="text-[10px] text-goldAccent tracking-widest uppercase">Agualva-Cacém</span>
                 </div>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+            <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
                 <a href="#inicio" class="text-gray-300 hover:text-goldAccent transition">Início</a>
                 <a href="#sobre" class="text-gray-300 hover:text-goldAccent transition">Sobre Nós</a>
                 <a href="#ementa" class="text-gray-300 hover:text-goldAccent transition">Ementa</a>
                 <a href="#shisha" class="text-gray-300 hover:text-goldAccent transition">Shisha & Vibe</a>
                 <a href="#galeria" class="text-gray-300 hover:text-goldAccent transition">Galeria</a>
-                <a href="#contacto" class="text-gray-300 hover:text-goldAccent transition">Localização & Contactos</a>
+                <a href="#contacto" class="text-gray-300 hover:text-goldAccent transition">Contactos</a>
             </nav>
 
             <!-- CTA Header -->
-            <div class="hidden lg:flex items-center gap-3">
-                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 shadow-lg transition">
-                    <i class="fab fa-instagram"></i> Eventos / Instagram
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg transition">
+                    <i class="fab fa-instagram"></i> Eventos
                 </a>
-                <a href="#reservas" class="bg-goldAccent hover:bg-goldHover text-navyBlue px-5 py-2.5 rounded-full text-xs font-bold transition tracking-wide shadow-lg shadow-goldAccent/10">
-                    Reservar Mesa
+                <a href="#reservas" class="bg-goldAccent hover:bg-goldHover text-navyBlue px-4 py-2 rounded-full text-xs font-bold transition tracking-wide shadow-lg shadow-goldAccent/10">
+                    Reservar
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-goldAccent text-2xl focus:outline-none">
+            <button id="menu-btn" class="lg:hidden text-goldAccent text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navyBlue border-b border-goldAccent/20 px-6 py-6 space-y-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-navyBlue border-b border-goldAccent/20 px-6 py-6 space-y-4">
             <a href="#inicio" class="block text-gray-200 hover:text-goldAccent font-medium">Início</a>
             <a href="#sobre" class="block text-gray-200 hover:text-goldAccent font-medium">Sobre Nós</a>
             <a href="#ementa" class="block text-gray-200 hover:text-goldAccent font-medium">Ementa</a>
             <a href="#shisha" class="block text-gray-200 hover:text-goldAccent font-medium">Shisha & Vibe</a>
             <a href="#galeria" class="block text-gray-200 hover:text-goldAccent font-medium">Galeria</a>
-            <a href="#contacto" class="block text-gray-200 hover:text-goldAccent font-medium">Localização & Contactos</a>
+            <a href="#contacto" class="block text-gray-200 hover:text-goldAccent font-medium">Contactos</a>
             <div class="pt-4 flex flex-col gap-3">
                 <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 text-center text-white py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2">
                     <i class="fab fa-instagram"></i> Marcar Evento (Instagram)
@@ -100,8 +107,11 @@
         </div>
     </header>
 
+    <!-- Barra com Estilo Cabo-Verdiano / Cultural -->
+    <div class="cv-cultural-stripe mt-20"></div>
+
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-12 pb-16 overflow-hidden">
         <!-- Background Image com Overlay Escuro -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80" alt="Restaurante D&S" class="w-full h-full object-cover opacity-25">
@@ -115,12 +125,12 @@
                 <span class="text-[10px] text-goldAccent tracking-wider uppercase block mt-1 font-semibold">Café / Restaurante</span>
             </div>
 
-            <span class="text-goldAccent uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold mb-4 block">Cozinha Africana & Portuguesa em Agualva-Cacém</span>[cite: 1]
+            <span class="text-goldAccent uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold mb-4 block">Morabeza & Tradição: Cozinha Africana & Portuguesa</span>
             <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Sabores Autênticos & <span class="gold-gradient-text">Vibe Maravilhosa</span>[cite: 1]
+                Sabores Autênticos & <span class="gold-gradient-text">Vibe Maravilhosa</span>
             </h1>
             <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light">
-                Venha desfrutar de almoços e jantares memoráveis, ótimos momentos em família, música ao vivo e as melhores especialidades tradicionais[cite: 1].
+                Venha desfrutar de almoços e jantares memoráveis, com o espírito acolhedor de Cabo Verde e de Portugal, música ao vivo e momentos inesquecíveis.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -150,7 +160,7 @@
                     </div>
                     <div>
                         <h4 class="text-xs text-gray-400 uppercase font-semibold">Localização</h4>
-                        <p class="text-white text-sm font-bold">Rua Joaquim G. Costa Caldas 3</p>[cite: 1]
+                        <p class="text-white text-sm font-bold">Rua Joaquim G. Costa Caldas 3</p>
                     </div>
                 </div>
 
@@ -160,7 +170,7 @@
                     </div>
                     <div>
                         <h4 class="text-xs text-gray-400 uppercase font-semibold">Atrações</h4>
-                        <p class="text-white text-sm font-bold">Música ao Vivo & Shisha Now</p>[cite: 1]
+                        <p class="text-white text-sm font-bold">Música ao Vivo & Shisha Now</p>
                     </div>
                 </div>
             </div>
@@ -168,32 +178,32 @@
     </section>
 
     <!-- Sobre Nós & A nossa receita -->
-    <section id="sobre" class="py-24 bg-navyBlue/40 border-t border-b border-goldAccent/10">
+    <section id="sobre" class="py-24 bg-navyBlue/40 border-t border-b border-goldAccent/10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Quem Somos</span>
+                    <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Cultura e Sabor</span>
                     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">
-                        Um espaço acolhedor feito de bons momentos e sabores genuínos
+                        A alma cabo-verdiana e a tradição portuguesa reunidas à mesa
                     </h2>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        O **Café Restaurante D&S** em Agualva-Cacém[cite: 1] é o ponto de encontro perfeito para quem valoriza uma refeição de excelência, seja em família, com amigos ou em grupos. Combinamos a riqueza da culinária tradicional com os melhores sabores africanos e portugueses[cite: 1].
+                        O **Café Restaurante D&S** em Agualva-Cacém oferece uma experiência gastronómica calorosa e genuína, inspirada na morabeza e nos sabores marcantes de África e de Portugal.
                     </p>
                     <p class="text-gray-300 leading-relaxed mb-8">
-                        Dispomos de um ambiente descontraído[cite: 1], recheado de boa disposição, música ao vivo e um serviço de shisha de qualidade superior para tornar o seu dia espetacular[cite: 1].
+                        Dispomos de um ambiente alegre e descontraído, ideal para convívios em família, jantares de grupo e momentos festivos com música ao vivo.
                     </p>
 
                     <!-- A Nossa Receita Destaque -->
                     <div class="bg-darkBg/80 border-2 border-goldAccent/40 p-6 rounded-2xl shadow-xl">
                         <h3 class="font-serif text-goldAccent text-xl font-bold mb-4 flex items-center gap-2">
-                            <i class="fas fa-heart text-goldAccent"></i> A nossa receita![cite: 2]
+                            <i class="fas fa-heart text-goldAccent"></i> A nossa receita!
                         </h3>
                         <ul class="space-y-2 text-sm text-gray-200">
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>2 kg</strong> de abraços[cite: 2]</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>3 kg</strong> de amor[cite: 2]</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>2 litros</strong> de sorrisos[cite: 2]</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>2 kg</strong> de abraços</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>3 kg</strong> de amor</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>2 litros</strong> de sorrisos</li>
                         </ul>
-                        <p class="mt-4 text-xs italic text-goldAccent/90 font-medium">"Mexer tudo com carinho... e servir todos os dias."[cite: 2]</p>
+                        <p class="mt-4 text-xs italic text-goldAccent/90 font-medium">"Mexer tudo com carinho... e servir todos os dias."</p>
                     </div>
                 </div>
 
@@ -211,10 +221,10 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Gastronomia de Excelência</span>
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">A Nossa Ementa Oficial</h2>
-                <p class="text-gray-400">Descubra os pratos tradicionais preparados com dedicação e os melhores ingredientes.</p>
+                <p class="text-gray-400">Sabores tradicionais africanos e portugueses preparados com dedicação e os melhores ingredientes.</p>
             </div>
 
-            <!-- Grid de Pratos Atualizado com a Ementa Real -->
+            <!-- Grid de Pratos com a Ementa Real -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Item 1: Feijoada -->
                 <div class="bg-navyBlue/70 border border-goldAccent/20 rounded-2xl overflow-hidden shadow-xl hover:border-goldAccent/50 transition flex flex-col sm:flex-row">
@@ -226,9 +236,9 @@
                         <div>
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-serif text-xl font-bold text-white">Feijoada</h3>
-                                <span class="text-goldAccent font-bold text-lg">12 €</span>[cite: 11]
+                                <span class="text-goldAccent font-bold text-lg">12 €</span>
                             </div>
-                            <p class="text-gray-400 text-sm mb-4">Feijão Congo preparado de forma tradicional com carnes selecionadas.</p>[cite: 11]
+                            <p class="text-gray-400 text-sm mb-4">Feijão Congo preparado de forma tradicional com carnes selecionadas.</p>
                         </div>
                         <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
                     </div>
@@ -244,9 +254,9 @@
                         <div>
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-serif text-xl font-bold text-white">Costeletas</h3>
-                                <span class="text-goldAccent font-bold text-lg">10 €</span>[cite: 11]
+                                <span class="text-goldAccent font-bold text-lg">10 €</span>
                             </div>
-                            <p class="text-gray-400 text-sm mb-4">Costeletas grelhadas. Acompanha batata, salada e arroz branco.</p>[cite: 11]
+                            <p class="text-gray-400 text-sm mb-4">Costeletas grelhadas. Acompanha batata, salada e arroz branco.</p>
                         </div>
                         <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
                     </div>
@@ -262,9 +272,9 @@
                         <div>
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-serif text-xl font-bold text-white">Mão de Vaca</h3>
-                                <span class="text-goldAccent font-bold text-lg">6 €</span>[cite: 11]
+                                <span class="text-goldAccent font-bold text-lg">6 €</span>
                             </div>
-                            <p class="text-gray-400 text-sm mb-4">Mão de vaca com grão e cenoura, apurado com sabor único.</p>[cite: 11]
+                            <p class="text-gray-400 text-sm mb-4">Mão de vaca com grão e cenoura, apurado com sabor único.</p>
                         </div>
                         <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
                     </div>
@@ -280,9 +290,9 @@
                         <div>
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-serif text-xl font-bold text-white">Bitoque</h3>
-                                <span class="text-goldAccent font-bold text-lg">9 €</span>[cite: 11]
+                                <span class="text-goldAccent font-bold text-lg">9 €</span>
                             </div>
-                            <p class="text-gray-400 text-sm mb-4">Bitoque com ovo. Acompanha batata frita e arroz branco.</p>[cite: 11]
+                            <p class="text-gray-400 text-sm mb-4">Bitoque com ovo. Acompanha batata frita e arroz branco.</p>
                         </div>
                         <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
                     </div>
@@ -294,15 +304,15 @@
     <!-- Shisha & Vibe -->
     <section id="shisha" class="py-24 bg-gradient-to-b from-navyBlue/40 to-darkBg relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Shisha - Now</span>[cite: 1]
-            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Desfrute da Vibe Mais Descontraída</h2>[cite: 1]
+            <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Shisha - Now</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Desfrute da Vibe Mais Descontraída</h2>
             <p class="text-gray-300 max-w-2xl mx-auto mb-10 text-base">
-                Procura um sítio para relaxar ao fim do dia? Venha experimentar o nosso serviço de Shisha com uma seleção de aromas exclusivos, boa música e um ambiente único em Agualva-Cacém[cite: 1].
+                Procura um sítio para relaxar ao fim do dia? Venha experimentar o nosso serviço de Shisha com uma seleção de aromas exclusivos, boa música e um ambiente único.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#reservas" class="bg-goldAccent hover:bg-goldHover text-navyBlue font-bold px-8 py-3.5 rounded-full transition shadow-lg">Reservar Mesa com Shisha</a>
                 <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-8 py-3.5 rounded-full transition flex items-center gap-2">
-                    <i class="fab fa-instagram"></i> Ver no Instagram[cite: 1]
+                    <i class="fab fa-instagram"></i> Ver no Instagram
                 </a>
             </div>
         </div>
@@ -314,7 +324,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Espaço & Ambiente</span>
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Galeria de Fotos</h2>
-                <p class="text-gray-400">Espreite o interior acolhedor do nosso espaço preparado para receber famílias, amigos e eventos[cite: 1].</p>
+                <p class="text-gray-400">Espreite o interior acolhedor do nosso espaço preparado para receber famílias, amigos e eventos.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -348,7 +358,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-white">Morada</h3>
-                                <p class="text-gray-300 text-sm">Rua Joaquim Guilherme da Costa Caldas 3, 2735-073 Agualva-Cacém</p>[cite: 1]
+                                <p class="text-gray-300 text-sm">Rua Joaquim Guilherme da Costa Caldas 3, 2735-073 Agualva-Cacém</p>
                             </div>
                         </div>
 
@@ -358,7 +368,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-white">Telefones</h3>
-                                <p class="text-gray-300 text-sm">939 243 442 | 966 390 841 | 938 877 416</p>[cite: 1]
+                                <p class="text-gray-300 text-sm">939 243 442 | 966 390 841 | 938 877 416</p>
                             </div>
                         </div>
 
@@ -368,12 +378,12 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-white">Email</h3>
-                                <p class="text-gray-300 text-sm">d.srestaurante09@gmail.com</p>[cite: 1]
+                                <p class="text-gray-300 text-sm">d.srestaurante09@gmail.com</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Botões de Ação Direta (GPS e Instagram para Eventos) -->
+                    <!-- Botões de Ação Direta -->
                     <div class="mt-8 flex flex-wrap gap-4">
                         <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Guilherme+da+Costa+Caldas+3+Agualva-Cacém" target="_blank" class="bg-goldAccent hover:bg-goldHover text-navyBlue font-bold px-6 py-3 rounded-full text-sm transition flex items-center gap-2 shadow-lg">
                             <i class="fas fa-directions"></i> Adicionar Localização GPS
@@ -445,9 +455,9 @@
                 </div>
                 <span class="font-serif text-white font-bold text-lg">Café Restaurante D&S</span>
             </div>
-            <p>© 2026 Café Restaurante D&S (Agualva-Cacém). Todos os direitos reservados.</p>[cite: 1]
+            <p>© 2026 Café Restaurante D&S (Agualva-Cacém). Todos os direitos reservados.</p>
             <div class="flex gap-4 text-xl">
-                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="text-goldAccent hover:text-white transition"><i class="fab fa-instagram"></i></a>[cite: 1]
+                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="text-goldAccent hover:text-white transition"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
