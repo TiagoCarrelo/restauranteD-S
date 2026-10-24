@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Restaurante D&S | Cozinha Africana e Portuguesa em Agualva-Cacém</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyBlue: '#0b162c',
+                        goldAccent: '#d4af37',
+                        goldHover: '#e5c158',
+                        darkBg: '#070e1a'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #070e1a;
+            color: #f3f4f6;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-goldAccent selection:text-navyBlue">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navyBlue/95 backdrop-blur-md border-b border-goldAccent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-navyBlue border-2 border-goldAccent flex flex-col items-center justify-center shadow-lg shadow-goldAccent/20 overflow-hidden p-1">
+                    <span class="font-serif font-bold text-goldAccent text-base leading-none">D&S</span>
+                    <span class="text-[7px] text-goldAccent uppercase tracking-tighter">Café</span>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg tracking-wide text-white block">Café Restaurante D&S</span>
+                    <span class="text-xs text-goldAccent tracking-widest uppercase">Agualva-Cacém</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="text-gray-300 hover:text-goldAccent transition">Início</a>
+                <a href="#sobre" class="text-gray-300 hover:text-goldAccent transition">Sobre Nós</a>
+                <a href="#ementa" class="text-gray-300 hover:text-goldAccent transition">Ementa</a>
+                <a href="#shisha" class="text-gray-300 hover:text-goldAccent transition">Shisha & Vibe</a>
+                <a href="#galeria" class="text-gray-300 hover:text-goldAccent transition">Galeria</a>
+                <a href="#contacto" class="text-gray-300 hover:text-goldAccent transition">Localização & Contactos</a>
+            </nav>
+
+            <!-- CTA Header -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 shadow-lg transition">
+                    <i class="fab fa-instagram"></i> Eventos / Instagram
+                </a>
+                <a href="#reservas" class="bg-goldAccent hover:bg-goldHover text-navyBlue px-5 py-2.5 rounded-full text-xs font-bold transition tracking-wide shadow-lg shadow-goldAccent/10">
+                    Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-goldAccent text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navyBlue border-b border-goldAccent/20 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-gray-200 hover:text-goldAccent font-medium">Início</a>
+            <a href="#sobre" class="block text-gray-200 hover:text-goldAccent font-medium">Sobre Nós</a>
+            <a href="#ementa" class="block text-gray-200 hover:text-goldAccent font-medium">Ementa</a>
+            <a href="#shisha" class="block text-gray-200 hover:text-goldAccent font-medium">Shisha & Vibe</a>
+            <a href="#galeria" class="block text-gray-200 hover:text-goldAccent font-medium">Galeria</a>
+            <a href="#contacto" class="block text-gray-200 hover:text-goldAccent font-medium">Localização & Contactos</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 text-center text-white py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2">
+                    <i class="fab fa-instagram"></i> Marcar Evento (Instagram)
+                </a>
+                <a href="#reservas" class="bg-goldAccent text-center text-navyBlue py-2.5 rounded-full text-sm font-bold">Reservar Mesa</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Image com Overlay Escuro -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80" alt="Restaurante D&S" class="w-full h-full object-cover opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-navyBlue/70 to-darkBg"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <!-- Logótipo Destaque -->
+            <div class="inline-flex flex-col items-center justify-center w-32 h-32 rounded-full bg-navyBlue border-4 border-goldAccent shadow-2xl shadow-goldAccent/30 mb-8 mx-auto p-2">
+                <span class="font-serif font-bold text-3xl gold-gradient-text block leading-none">D&S</span>
+                <span class="text-[10px] text-goldAccent tracking-wider uppercase block mt-1 font-semibold">Café / Restaurante</span>
+            </div>
+
+            <span class="text-goldAccent uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold mb-4 block">Cozinha Africana & Portuguesa em Agualva-Cacém</span>[cite: 1]
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                Sabores Autênticos & <span class="gold-gradient-text">Vibe Maravilhosa</span>[cite: 1]
+            </h1>
+            <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light">
+                Venha desfrutar de almoços e jantares memoráveis, ótimos momentos em família, música ao vivo e as melhores especialidades tradicionais[cite: 1].
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#ementa" class="w-full sm:w-auto bg-goldAccent hover:bg-goldHover text-navyBlue font-bold px-8 py-4 rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+                    Ver Ementa Oficial
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Guilherme+da+Costa+Caldas+3+Agualva-Cacém" target="_blank" class="w-full sm:w-auto bg-navyBlue/80 hover:bg-navyBlue text-white border border-goldAccent/50 font-semibold px-8 py-4 rounded-full transition flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marked-alt text-goldAccent"></i> Abrir GPS (Google Maps)
+                </a>
+            </div>
+
+            <!-- Badges Informativos -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto text-left">
+                <div class="bg-navyBlue/60 border border-goldAccent/20 p-5 rounded-xl backdrop-blur-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-goldAccent/10 flex items-center justify-center text-goldAccent text-xl flex-shrink-0">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-gray-400 uppercase font-semibold">Horário</h4>
+                        <p class="text-white text-sm font-bold">Todos os dias: 10h00 - 22h00</p>
+                    </div>
+                </div>
+
+                <div class="bg-navyBlue/60 border border-goldAccent/20 p-5 rounded-xl backdrop-blur-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-goldAccent/10 flex items-center justify-center text-goldAccent text-xl flex-shrink-0">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-gray-400 uppercase font-semibold">Localização</h4>
+                        <p class="text-white text-sm font-bold">Rua Joaquim G. Costa Caldas 3</p>[cite: 1]
+                    </div>
+                </div>
+
+                <div class="bg-navyBlue/60 border border-goldAccent/20 p-5 rounded-xl backdrop-blur-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-goldAccent/10 flex items-center justify-center text-goldAccent text-xl flex-shrink-0">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-gray-400 uppercase font-semibold">Atrações</h4>
+                        <p class="text-white text-sm font-bold">Música ao Vivo & Shisha Now</p>[cite: 1]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós & A nossa receita -->
+    <section id="sobre" class="py-24 bg-navyBlue/40 border-t border-b border-goldAccent/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Quem Somos</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">
+                        Um espaço acolhedor feito de bons momentos e sabores genuínos
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        O **Café Restaurante D&S** em Agualva-Cacém[cite: 1] é o ponto de encontro perfeito para quem valoriza uma refeição de excelência, seja em família, com amigos ou em grupos. Combinamos a riqueza da culinária tradicional com os melhores sabores africanos e portugueses[cite: 1].
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-8">
+                        Dispomos de um ambiente descontraído[cite: 1], recheado de boa disposição, música ao vivo e um serviço de shisha de qualidade superior para tornar o seu dia espetacular[cite: 1].
+                    </p>
+
+                    <!-- A Nossa Receita Destaque -->
+                    <div class="bg-darkBg/80 border-2 border-goldAccent/40 p-6 rounded-2xl shadow-xl">
+                        <h3 class="font-serif text-goldAccent text-xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fas fa-heart text-goldAccent"></i> A nossa receita![cite: 2]
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-200">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>2 kg</strong> de abraços[cite: 2]</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>3 kg</strong> de amor[cite: 2]</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-goldAccent"></i> <strong>2 litros</strong> de sorrisos[cite: 2]</li>
+                        </ul>
+                        <p class="mt-4 text-xs italic text-goldAccent/90 font-medium">"Mexer tudo com carinho... e servir todos os dias."[cite: 2]</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Restaurante Interior" class="rounded-2xl shadow-2xl object-cover h-64 w-full border border-goldAccent/20">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Pratos Deliciosos" class="rounded-2xl shadow-2xl object-cover h-64 w-full mt-8 border border-goldAccent/20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ementa Interativa -->
+    <section id="ementa" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Gastronomia de Excelência</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">A Nossa Ementa Oficial</h2>
+                <p class="text-gray-400">Descubra os pratos tradicionais preparados com dedicação e os melhores ingredientes.</p>
+            </div>
+
+            <!-- Grid de Pratos Atualizado com a Ementa Real -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Item 1: Feijoada -->
+                <div class="bg-navyBlue/70 border border-goldAccent/20 rounded-2xl overflow-hidden shadow-xl hover:border-goldAccent/50 transition flex flex-col sm:flex-row">
+                    <div class="sm:w-1/2 h-48 sm:h-auto overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Feijoada" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-goldAccent text-navyBlue text-xs font-bold px-3 py-1 rounded-full">Especialidade</span>
+                    </div>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Feijoada</h3>
+                                <span class="text-goldAccent font-bold text-lg">12 €</span>[cite: 11]
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">Feijão Congo preparado de forma tradicional com carnes selecionadas.</p>[cite: 11]
+                        </div>
+                        <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Costeletas -->
+                <div class="bg-navyBlue/70 border border-goldAccent/20 rounded-2xl overflow-hidden shadow-xl hover:border-goldAccent/50 transition flex flex-col sm:flex-row">
+                    <div class="sm:w-1/2 h-48 sm:h-auto overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Costeletas" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-goldAccent text-navyBlue text-xs font-bold px-3 py-1 rounded-full">Grelhados</span>
+                    </div>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Costeletas</h3>
+                                <span class="text-goldAccent font-bold text-lg">10 €</span>[cite: 11]
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">Costeletas grelhadas. Acompanha batata, salada e arroz branco.</p>[cite: 11]
+                        </div>
+                        <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Mão de Vaca -->
+                <div class="bg-navyBlue/70 border border-goldAccent/20 rounded-2xl overflow-hidden shadow-xl hover:border-goldAccent/50 transition flex flex-col sm:flex-row">
+                    <div class="sm:w-1/2 h-48 sm:h-auto overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Mão de Vaca" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-goldAccent text-navyBlue text-xs font-bold px-3 py-1 rounded-full">Tradicional</span>
+                    </div>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Mão de Vaca</h3>
+                                <span class="text-goldAccent font-bold text-lg">6 €</span>[cite: 11]
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">Mão de vaca com grão e cenoura, apurado com sabor único.</p>[cite: 11]
+                        </div>
+                        <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Bitoque -->
+                <div class="bg-navyBlue/70 border border-goldAccent/20 rounded-2xl overflow-hidden shadow-xl hover:border-goldAccent/50 transition flex flex-col sm:flex-row">
+                    <div class="sm:w-1/2 h-48 sm:h-auto overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80" alt="Bitoque" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-goldAccent text-navyBlue text-xs font-bold px-3 py-1 rounded-full">Clássico</span>
+                    </div>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Bitoque</h3>
+                                <span class="text-goldAccent font-bold text-lg">9 €</span>[cite: 11]
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">Bitoque com ovo. Acompanha batata frita e arroz branco.</p>[cite: 11]
+                        </div>
+                        <span class="text-xs text-goldAccent font-semibold uppercase">Prato Principal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shisha & Vibe -->
+    <section id="shisha" class="py-24 bg-gradient-to-b from-navyBlue/40 to-darkBg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Shisha - Now</span>[cite: 1]
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Desfrute da Vibe Mais Descontraída</h2>[cite: 1]
+            <p class="text-gray-300 max-w-2xl mx-auto mb-10 text-base">
+                Procura um sítio para relaxar ao fim do dia? Venha experimentar o nosso serviço de Shisha com uma seleção de aromas exclusivos, boa música e um ambiente único em Agualva-Cacém[cite: 1].
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#reservas" class="bg-goldAccent hover:bg-goldHover text-navyBlue font-bold px-8 py-3.5 rounded-full transition shadow-lg">Reservar Mesa com Shisha</a>
+                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-8 py-3.5 rounded-full transition flex items-center gap-2">
+                    <i class="fab fa-instagram"></i> Ver no Instagram[cite: 1]
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Espaço & Ambiente</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Galeria de Fotos</h2>
+                <p class="text-gray-400">Espreite o interior acolhedor do nosso espaço preparado para receber famílias, amigos e eventos[cite: 1].</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden border border-goldAccent/20 h-72 shadow-xl relative group">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Interior D&S" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-goldAccent/20 h-72 shadow-xl relative group">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Ambiente do Restaurante" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-goldAccent/20 h-72 shadow-xl relative group">
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80" alt="Eventos e Grupos" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservas & Contactos -->
+    <section id="contacto" class="py-24 bg-navyBlue/40 border-t border-goldAccent/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Informações e Mapa -->
+                <div>
+                    <span class="text-goldAccent uppercase tracking-widest text-xs font-bold block mb-2">Fale Connosco</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">Visite o Café Restaurante D&S</h2>
+                    <p class="text-gray-300 mb-8">Estamos de portas abertas todos os dias para lhe proporcionar momentos inesquecíveis.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-goldAccent/10 text-goldAccent flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white">Morada</h3>
+                                <p class="text-gray-300 text-sm">Rua Joaquim Guilherme da Costa Caldas 3, 2735-073 Agualva-Cacém</p>[cite: 1]
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-goldAccent/10 text-goldAccent flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white">Telefones</h3>
+                                <p class="text-gray-300 text-sm">939 243 442 | 966 390 841 | 938 877 416</p>[cite: 1]
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-goldAccent/10 text-goldAccent flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white">Email</h3>
+                                <p class="text-gray-300 text-sm">d.srestaurante09@gmail.com</p>[cite: 1]
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação Direta (GPS e Instagram para Eventos) -->
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Guilherme+da+Costa+Caldas+3+Agualva-Cacém" target="_blank" class="bg-goldAccent hover:bg-goldHover text-navyBlue font-bold px-6 py-3 rounded-full text-sm transition flex items-center gap-2 shadow-lg">
+                            <i class="fas fa-directions"></i> Adicionar Localização GPS
+                        </a>
+                        <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-6 py-3 rounded-full text-sm transition flex items-center gap-2 shadow-lg">
+                            <i class="fab fa-instagram"></i> Marcações para Eventos (Instagram)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulário de Reserva -->
+                <div id="reservas" class="bg-darkBg border border-goldAccent/30 p-8 rounded-3xl shadow-2xl">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Reserve a sua Mesa</h3>
+                    <p class="text-gray-400 text-sm mb-6">Preencha o formulário abaixo para garantir a sua mesa ou festa.</p>
+
+                    <form id="reserva-form" onsubmit="handleReservation(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Nome Completo</label>
+                            <input type="text" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Telefone</label>
+                                <input type="tel" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Nº de Pessoas</label>
+                                <select class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                                    <option>1 a 2 Pessoas</option>
+                                    <option>3 a 4 Pessoas</option>
+                                    <option>5 a 8 Pessoas (Grupo)</option>
+                                    <option>Mais de 8 Pessoas (Evento)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Data</label>
+                                <input type="date" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Hora</label>
+                                <input type="time" required class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase text-gray-300 font-semibold mb-1">Observações ou Pedidos Especiais</label>
+                            <textarea rows="3" class="w-full bg-navyBlue border border-goldAccent/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-goldAccent" placeholder="Ex: Aniversário, mesa com shisha..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-navyBlue font-bold py-4 rounded-xl transition shadow-lg text-base">
+                            Confirmar Reserva
+                        </button>
+                    </form>
+
+                    <div id="success-msg" class="hidden mt-4 bg-green-500/20 border border-green-500 text-green-300 p-4 rounded-xl text-center text-sm">
+                        Reserva efetuada com sucesso! Entraremos em contacto para confirmação.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navyBlue border-t border-goldAccent/20 py-12 text-center text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-navyBlue border-2 border-goldAccent flex items-center justify-center">
+                    <span class="font-serif font-bold text-goldAccent text-xs">D&S</span>
+                </div>
+                <span class="font-serif text-white font-bold text-lg">Café Restaurante D&S</span>
+            </div>
+            <p>© 2026 Café Restaurante D&S (Agualva-Cacém). Todos os direitos reservados.</p>[cite: 1]
+            <div class="flex gap-4 text-xl">
+                <a href="https://www.instagram.com/D.srestaurante09" target="_blank" class="text-goldAccent hover:text-white transition"><i class="fab fa-instagram"></i></a>[cite: 1]
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Simulação de Reserva
+        function handleReservation(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('success-msg');
+            successMsg.classList.remove('hidden');
+            document.getElementById('reserva-form').reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
